@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a=r,u=rwx mi_dir
+chmod ugo+X 
