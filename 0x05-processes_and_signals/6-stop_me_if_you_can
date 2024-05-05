@@ -17,11 +17,11 @@ pid=$(pgrep -f "4-to_infinity_and_beyond")
 
 # Check if the process is running
 if [ -z "$pid" ]; then
-	sleep 2
+	kill -SIGINT "$pid"
    # echo "Process '4-to_infinity_and_beyond' is not running."
-else
+#else
     # Use the SIGINT signal (Ctrl+C) to stop the process
-    kill -SIGINT "$pid"
+   # kill -SIGINT "$pid"
 #    echo "Process '4-to_infinity_and_beyond' stopped gracefully."
 fi
 
