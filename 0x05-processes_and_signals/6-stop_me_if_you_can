@@ -21,7 +21,7 @@ if [ -z "$pid" ]; then
    # echo "Process '4-to_infinity_and_beyond' is not running."
 else
     # Use the SIGINT signal (Ctrl+C) to stop the process
-    kill -SIGINT $pid
+    kill -SIGINT "$pid"
 #    echo "Process '4-to_infinity_and_beyond' stopped gracefully."
 fi
 
