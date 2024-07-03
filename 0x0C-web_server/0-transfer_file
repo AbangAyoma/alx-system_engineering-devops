@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 # Write a Bash script that transfers a file from our client to a server:
+
 usage(){
-echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
+echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 exit 1
 }
 if [ "$#" -ne 4 ]; then
 usage
 fi
-path=ToFile"$1"
+pathToFile="$1"
 Ip="$2"
 userName="$3"
 pathToSsh="$4"
-scp -i "$pathToFile" -o StrictHostKeyChecking=no "$Ip" "$userName" $pathToSsh:~/"
+
+scp -i "$PathToFile" -o StrictHostKeyChecking=no "$PathToSsh" "$userName@$Ip:~/"
