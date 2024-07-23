@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Update package list and install nginx
+
+sudo apt update
+sudo apt install -y nginx
+
+# Create nginx user if it doesn't exist
+sudo useradd -r -s /sbin/nologin nginx
+
+# Set nginx user in nginx.conf
+sudo sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
+
+# Configure Nginx to listen on port 8080
+sudo sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
+sudo sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:8080 default_server;/' /etc/nginx/sites-available/default
+
+# Change ownership of the web root directory to nginx user
+sudo chown -R nginx:nginx /var/www/html
+
+# Restart Nginx
+sudo systemctl restart nginx
+
