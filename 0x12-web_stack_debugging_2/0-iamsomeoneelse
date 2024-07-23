@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# - A script to echo the username name of the argument given 
+if [ "$#" -ne 0 ]; then
+echo "$1"
+else
+whoami
+fi
