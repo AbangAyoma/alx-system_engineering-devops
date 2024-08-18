@@ -1,4 +1,4 @@
-# Fix 500 error in Apache web server using Puppet instead of Conventional Bash
+# Fix 500 error in Apache web server using Puppet instead of Bash
 
 exec {'replace':
   provider => shell,
